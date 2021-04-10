@@ -1,38 +1,157 @@
-.App {
-  text-align: center;
+body {
+  background: linear-gradient(90deg, rgba(108,133,115,1) 0%, rgba(140,113,196,1) 39%, rgba(147,166,98,1) 100%); 
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.logo-top {
+display: flex;
+justify-content: left;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.notebox{
+  font-size: 10em;
+  border: black;
+  width: 90%;
+  margin: auto;
+  margin-bottom: 2%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
+}
+
+.carousel-wrapper{
+  width: 200px;
+  margin: auto;
+}
+
+.note-box {
+  display: flex;
+  justify-content: space-around;
+  
+}
+.right-arrow-box,
+.left-arrow-box{
+  width: 65px;
+  height: 65px;
+  margin: auto;
+  position: relative;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.left-arrow-box{
+  left: 15%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.right-arrow-box{
+  right: 15%;
 }
+
+.left-arrow-box:hover > span,
+.right-arrow-box:hover > span{
+  transition: ease-in-out 1s;
+  border-radius: 5px;
+  color: rgb(15, 15, 15);
+}
+
+.fa-left,
+.fa-right{
+  height: 90%;
+}
+
+ /* Note Data */
+
+.data-wrapper {
+  width: 90%;
+  margin: auto;
+  font-size: 1.5rem;
+}
+
+.scale-grid{
+display: grid;
+grid-template-rows: auto auto auto;
+grid-template-columns: 49.5% 1% 49.5%;
+margin-bottom: 5%;
+}
+
+.data-divider{
+  position: relative;
+  border: 3px dashed; 
+  width: 0px;
+  border-style: none none none dashed;
+  left: 2px;
+}
+
+.type {
+  font-weight: bold;
+  margin-bottom: 4%;
+  display: flex;
+  justify-content: center;
+}
+
+.series-wrapper{
+  display: grid;
+  grid-template-columns: repeat(5,20%);
+  font-size: 1.5em;
+  margin-bottom: 4%;
+
+}
+
+.series-wrapper > div {
+  width: 60px;
+  display: flex;
+  justify-content: center;
+}
+
+.progression-grid {
+  display: grid;
+  grid-template-columns: 1;
+  margin-bottom: 5%;
+  gap: 3%;
+}
+
+.progression-wrapper {
+  margin: auto;
+  font-size: 1.2em;
+}
+
+.progression-notes,
+.progression-intervals{
+  display: grid;
+  grid-template-columns: repeat(4, 33%);
+  margin-bottom: 5%;
+}
+
+.progression-note,
+.progression-interval {
+  font-size: 1.5em;
+}
+
+
+@media (max-width: 700px) {
+
+  .scale-grid {
+    grid-template-columns: 100%;
+    border-bottom: hidden;
+  }
+
+  .data-wrapper {
+    border-bottom: dashed;
+    margin-bottom: 5%;
+  }
+
+  .left-arrow-box{
+  left: 10%;
+}
+
+.right-arrow-box{
+  right: 10%;
+}
+
+.progression-notes,
+.progression-intervals{
+margin-bottom: 5%;
+}
+}
+
